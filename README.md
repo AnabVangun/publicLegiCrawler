@@ -12,14 +12,14 @@ laquelle l'API Légifrance est activée (ou *a minima* des identifiants OAuth po
 l'API Légifrance)
 3. disposer d'une base de données PostgreSQL accessible
 4. créer dans le package legiCrawler les fichiers suivants :
-  1. secret.py, assignant les variables :
-	  1. CLIENT_ID et CLIENT_SECRET correspondant aux identifiants OAuth déterminés à l'étape 2
-	  2. DB_NAME, DB_USER et DB_PW correspondant au nom de la base de données et aux identifiants permettant de s'y connecter
-  2. dummies.py, si et seulement si l'option "dummy" du LegiConnector est mise à True:
-    1. getCidList(page:int, pageSize:int)->List[int] : renvoie une liste de CID comme Légifrance pourrait le faire
-    2. getText(cid:str) -> dict : renvoie un texte Légifrance au format dictionnaire Python
-  3. dbStructure.py : description ADU (fichier définissant la structure de la base de données)
-  4. legiStructure.py : description ADU (fichier définissant le filtre de recherche à utiliser pour requêter Légifrance et la structure des textes récupérés par le filtre)
+    1. secret.py, assignant les variables :
+        1. CLIENT_ID et CLIENT_SECRET correspondant aux identifiants OAuth déterminés à l'étape 2
+        2. DB_NAME, DB_USER et DB_PW correspondant au nom de la base de données et aux identifiants permettant de s'y connecter
+    2. dummies.py, si et seulement si l'option "dummy" du LegiConnector est mise à True:
+        1. getCidList(page:int, pageSize:int)->List[int] : renvoie une liste de CID comme Légifrance pourrait le faire
+        2. getText(cid:str) -> dict : renvoie un texte Légifrance au format dictionnaire Python
+    3. dbStructure.py : description ADU (fichier définissant la structure de la base de données)
+    4. legiStructure.py : description ADU (fichier définissant le filtre de recherche à utiliser pour requêter Légifrance et la structure des textes récupérés par le filtre)
 5. si la base de données n'est pas accesssible à l'adresse 127.0.0.1:5432, quelques
 adaptations des scripts seront nécessaires.
 
